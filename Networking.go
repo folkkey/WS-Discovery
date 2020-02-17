@@ -22,8 +22,9 @@ const bufSize  = 8192
 
 func SendProbe(interfaceName string, scopes, types []string, namespaces map[string]string) []string{
 	// Creating UUID Version 4
-	var err error
-	uuidV4 := uuid.Must((uuid.NewV4()), err)
+// 	var err error
+// 	uuidV4 := uuid.Must((uuid.NewV4()), err)
+	uuidV4 := uuid.NewV4()
 	//fmt.Printf("UUIDv4: %s\n", uuidV4, err)
 
 	probeSOAP := buildProbeMessage(uuidV4.String(), scopes, types, namespaces)
